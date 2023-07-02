@@ -6,7 +6,7 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 20:11:42 by rthammat          #+#    #+#             */
-/*   Updated: 2023/07/02 22:44:25 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/07/02 22:45:39 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,5 @@ int main(void)
 	print_position(v, 2);
 	print_position(d, 11);
 	print_position(l, 4);
-	//try
-	//{
-	//	int pos_v = std::distance(v.begin(), easyfind(v, 2));
-	//	std::cout << "Find value match at position " << pos_v << std::endl;
-	//}
-	//catch(NotFound &e)
-	//{
-	//	std::cout << e.what() << std::endl;
-	//}
-	//easyfind(d, 3);
-	//easyfind(l, 20);
 	return (0);
 }

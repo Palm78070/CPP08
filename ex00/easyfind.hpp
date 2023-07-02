@@ -6,7 +6,7 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 20:11:57 by rthammat          #+#    #+#             */
-/*   Updated: 2023/07/02 22:44:31 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/07/02 22:45:42 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,9 @@ class NotFound : public std::exception
 template <typename T>
 typename T::iterator easyfind(T &container, int n)
 {
-	//typename T::iterator begin = container.begin();
 	typename T::iterator it = std::find(container.begin(), container.end(), n);
 	if (it == container.end())
 		throw NotFound();
-	//std::cout << "Find value match at position " << std::distance(begin, it) << std::endl;
 	return (it);
 }
 
