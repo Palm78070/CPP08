@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rthammat <rthammat@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 20:11:57 by rthammat          #+#    #+#             */
-/*   Updated: 2023/07/02 22:45:42 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/07/03 20:00:16 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 
 class NotFound : public std::exception
 {
-	public:
-		virtual const char *what() const throw(){ return "Cannot find value in container to match"; };
+public:
+	virtual const char *what() const throw() { return "Cannot find value in container to match"; };
 };
 
 template <typename T>
@@ -42,7 +42,7 @@ void print_position(T &container, int n)
 		int pos_v = std::distance(container.begin(), easyfind(container, n));
 		std::cout << "Find value match at position " << pos_v << std::endl;
 	}
-	catch(NotFound &e)
+	catch (NotFound &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
