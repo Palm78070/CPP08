@@ -6,7 +6,7 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 23:22:22 by rthammat          #+#    #+#             */
-/*   Updated: 2023/07/04 18:59:23 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/07/06 18:23:51 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,17 @@ int main(void)
 		++it;
 	}
 
+	std::cout << "\nconst_Iterate mstack:" << std::endl;
+	MutantStack<int>::const_iterator const_it = mstack.cbegin();
+	MutantStack<int>::const_iterator const_ite = mstack.cend();
+	++const_it;
+	--const_it;
+	while (const_it != const_ite)
+	{
+		std::cout << *const_it << std::endl;
+		++const_it;
+	}
+
 	std::cout << "\nIterate lst:" << std::endl;
 	std::list<int>::iterator it_lst = lst.begin();
 	std::list<int>::iterator ite_lst = lst.end();
@@ -88,15 +99,20 @@ int main(void)
 	MutantStack<int>::reverse_iterator rit = mstack.rbegin();
 	MutantStack<int>::reverse_iterator rite = mstack.rend();
 	std::cout << "\nTest rbegin and rend" << std::endl;
-	//std::cout << "mstack.rbegin() is " << *rit << std::endl;
-	//std::cout << "--rite" << std::endl;
-	//--rite;
-	//std::cout << "first element of mstack is " << *rite << std::endl;
 	std::cout << "reverse iterate mstack" << std::endl;
 	while (rit != rite)
 	{
 		std::cout << *rit << std::endl;
 		++rit;
+	}
+
+	std::cout << "constant reverse iterate mstack" << std::endl;
+	MutantStack<int>::const_reverse_iterator const_rit = mstack.crbegin();
+	MutantStack<int>::const_reverse_iterator const_rite = mstack.crend();
+	while (const_rit != const_rite)
+	{
+		std::cout << *const_rit << std::endl;
+		++const_rit;
 	}
 
 	lst.pop_back();
