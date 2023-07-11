@@ -6,7 +6,7 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 23:22:22 by rthammat          #+#    #+#             */
-/*   Updated: 2023/07/06 18:23:51 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/07/11 20:55:27 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(void)
 {
-	MutantStack<int> mstack;
+	MutantStack<int, std::list<int> > mstack;
 	std::list<int> lst;
 
 	mstack.push(5);
@@ -43,8 +43,8 @@ int main(void)
 	lst.push_back(0);
 
 	std::cout << "\nIterate mstack:" << std::endl;
-	MutantStack<int>::iterator it = mstack.begin();
-	MutantStack<int>::iterator ite = mstack.end();
+	MutantStack<int, std::list<int> >::iterator it = mstack.begin();
+	MutantStack<int, std::list<int> >::iterator ite = mstack.end();
 	++it;
 	--it;
 	while (it != ite)
@@ -54,8 +54,8 @@ int main(void)
 	}
 
 	std::cout << "\nconst_Iterate mstack:" << std::endl;
-	MutantStack<int>::const_iterator const_it = mstack.cbegin();
-	MutantStack<int>::const_iterator const_ite = mstack.cend();
+	MutantStack<int, std::list<int> >::const_iterator const_it = mstack.begin();
+	MutantStack<int, std::list<int> >::const_iterator const_ite = mstack.end();
 	++const_it;
 	--const_it;
 	while (const_it != const_ite)
@@ -75,9 +75,9 @@ int main(void)
 		++it_lst;
 	}
 
-	std::stack<int> s(mstack);
+	std::stack<int, std::list<int > > s(mstack);
 	std::cout << "\nTest deep copy" << std::endl;
-	MutantStack<int> mstack2(mstack);
+	MutantStack<int, std::list<int > > mstack2(mstack);
 	std::cout << "Pop mstack" << std::endl;
 	mstack.pop();
 	it = mstack.begin();
@@ -96,8 +96,8 @@ int main(void)
 		std::cout << *it << std::endl;
 		++it;
 	}
-	MutantStack<int>::reverse_iterator rit = mstack.rbegin();
-	MutantStack<int>::reverse_iterator rite = mstack.rend();
+	MutantStack<int, std::list<int > >::reverse_iterator rit = mstack.rbegin();
+	MutantStack<int, std::list<int > >::reverse_iterator rite = mstack.rend();
 	std::cout << "\nTest rbegin and rend" << std::endl;
 	std::cout << "reverse iterate mstack" << std::endl;
 	while (rit != rite)
@@ -107,8 +107,8 @@ int main(void)
 	}
 
 	std::cout << "constant reverse iterate mstack" << std::endl;
-	MutantStack<int>::const_reverse_iterator const_rit = mstack.crbegin();
-	MutantStack<int>::const_reverse_iterator const_rite = mstack.crend();
+	MutantStack<int, std::list<int > >::const_reverse_iterator const_rit = mstack.rbegin();
+	MutantStack<int, std::list<int > >::const_reverse_iterator const_rite = mstack.rend();
 	while (const_rit != const_rite)
 	{
 		std::cout << *const_rit << std::endl;

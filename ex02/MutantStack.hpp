@@ -6,7 +6,7 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 23:03:41 by rthammat          #+#    #+#             */
-/*   Updated: 2023/07/06 18:16:38 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/07/11 20:55:22 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 
 #include <iostream>
 #include <list>
-#include <vector>
 #include <cstdlib>
 #include <algorithm>
 #include <deque>
 #include <stack>
 
-template <typename T>
-class MutantStack : public std::stack<T>
+template <typename T, class C = std::deque<T > >
+class MutantStack : public std::stack<T, C>
 {
+	using std::stack<T, C>::c;
 public:
 	MutantStack(void){};
 	MutantStack(const MutantStack &src) { *this = src; };
@@ -35,7 +35,7 @@ public:
 	};
 	~MutantStack(void){};
 
-	typedef typename std::deque<T>::iterator iterator;
+	typedef typename C::iterator iterator;
 	iterator begin(void)
 	{
 		return (this->c.begin());
@@ -44,33 +44,60 @@ public:
 	{
 		return (this->c.end());
 	};
-	typedef typename std::deque<T>::const_iterator const_iterator;
-	const_iterator cbegin(void)
+	typedef typename C::const_iterator const_iterator;
+	const_iterator begin(void) const
 	{
 		return (this->c.begin());
 	};
-	const_iterator cend(void)
+	const_iterator end(void) const
 	{
 		return (this->c.end());
-	};
-	typedef typename std::deque<T>::reverse_iterator reverse_iterator;
+	}
+	typedef typename C::reverse_iterator reverse_iterator;
 	reverse_iterator rbegin(void)
 	{
 		return (this->c.rbegin());
-	}
+	};
 	reverse_iterator rend(void)
 	{
 		return (this->c.rend());
-	}
-	typedef typename std::deque<T>::const_reverse_iterator const_reverse_iterator;
-	const_reverse_iterator crbegin(void)
+	};
+	typedef typename C::const_reverse_iterator const_reverse_iterator;
+	const_reverse_iterator rbegin(void) const
 	{
-		return (this->c.rbegin());
-	}
-	const_reverse_iterator crend(void)
+		return (this->rebegin());
+	};
+	const_reverse_iterator rend(void) const
 	{
-		return (this->c.rend());
-	}
+		return (this->rend());
+	};
+	//typedef typename std::deque<T>::const_iterator const_iterator;
+	//const_iterator cbegin(void)
+	//{
+	//	return (this->c.begin());
+	//};
+	//const_iterator cend(void)
+	//{
+	//	return (this->c.end());
+	//};
+	//typedef typename std::deque<T>::reverse_iterator reverse_iterator;
+	//reverse_iterator rbegin(void)
+	//{
+	//	return (this->c.rbegin());
+	//}
+	//reverse_iterator rend(void)
+	//{
+	//	return (this->c.rend());
+	//}
+	//typedef typename std::deque<T>::const_reverse_iterator const_reverse_iterator;
+	//const_reverse_iterator crbegin(void)
+	//{
+	//	return (this->c.rbegin());
+	//}
+	//const_reverse_iterator crend(void)
+	//{
+	//	return (this->c.rend());
+	//}
 };
 
 #endif
