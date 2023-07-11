@@ -6,7 +6,7 @@
 /*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 23:03:41 by rthammat          #+#    #+#             */
-/*   Updated: 2023/07/11 20:55:22 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/07/11 21:04:10 by rthammat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 template <typename T, class C = std::deque<T > >
 class MutantStack : public std::stack<T, C>
 {
-	using std::stack<T, C>::c;
 public:
 	MutantStack(void){};
 	MutantStack(const MutantStack &src) { *this = src; };
@@ -71,33 +70,6 @@ public:
 	{
 		return (this->rend());
 	};
-	//typedef typename std::deque<T>::const_iterator const_iterator;
-	//const_iterator cbegin(void)
-	//{
-	//	return (this->c.begin());
-	//};
-	//const_iterator cend(void)
-	//{
-	//	return (this->c.end());
-	//};
-	//typedef typename std::deque<T>::reverse_iterator reverse_iterator;
-	//reverse_iterator rbegin(void)
-	//{
-	//	return (this->c.rbegin());
-	//}
-	//reverse_iterator rend(void)
-	//{
-	//	return (this->c.rend());
-	//}
-	//typedef typename std::deque<T>::const_reverse_iterator const_reverse_iterator;
-	//const_reverse_iterator crbegin(void)
-	//{
-	//	return (this->c.rbegin());
-	//}
-	//const_reverse_iterator crend(void)
-	//{
-	//	return (this->c.rend());
-	//}
 };
 
 #endif
