@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rthammat <rthammat@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 23:03:41 by rthammat          #+#    #+#             */
-/*   Updated: 2023/07/11 21:04:10 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/07/12 13:43:59 by rath             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #include <deque>
 #include <stack>
 
-template <typename T, class C = std::deque<T > >
+template <typename T, class C = std::deque<T> >
 class MutantStack : public std::stack<T, C>
 {
 public:
@@ -52,24 +52,24 @@ public:
 	{
 		return (this->c.end());
 	}
-	typedef typename C::reverse_iterator reverse_iterator;
-	reverse_iterator rbegin(void)
-	{
-		return (this->c.rbegin());
-	};
-	reverse_iterator rend(void)
-	{
-		return (this->c.rend());
-	};
-	typedef typename C::const_reverse_iterator const_reverse_iterator;
-	const_reverse_iterator rbegin(void) const
-	{
-		return (this->rebegin());
-	};
-	const_reverse_iterator rend(void) const
-	{
-		return (this->rend());
-	};
+	// typedef typename C::reverse_iterator reverse_iterator;
+	// reverse_iterator rbegin(void)
+	// {
+	// 	return (this->c.rbegin());
+	// };
+	// reverse_iterator rend(void)
+	// {
+	// 	return (this->c.rend());
+	// };
+	// typedef typename C::const_reverse_iterator const_reverse_iterator;
+	// const_reverse_iterator rbegin(void) const
+	// {
+	// 	return (this->rebegin());
+	// };
+	// const_reverse_iterator rend(void) const
+	// {
+	// 	return (this->rend());
+	// };
 };
 
 #endif

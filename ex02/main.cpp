@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rthammat <rthammat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rthammat <rthammat@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 23:22:22 by rthammat          #+#    #+#             */
-/*   Updated: 2023/07/11 21:04:16 by rthammat         ###   ########.fr       */
+/*   Updated: 2023/07/12 13:46:44 by rath             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ int main(void)
 		++it_lst;
 	}
 
-	std::stack<int, std::list<int > > s(mstack);
+	std::stack<int, std::list<int> > s(mstack);
 	std::cout << "\nTest deep copy" << std::endl;
-	MutantStack<int, std::list<int > > mstack2(mstack);
+	MutantStack<int, std::list<int> > mstack2(mstack);
 	std::cout << "Pop mstack" << std::endl;
 	mstack.pop();
 	it = mstack.begin();
@@ -96,33 +96,33 @@ int main(void)
 		std::cout << *it << std::endl;
 		++it;
 	}
-	MutantStack<int, std::list<int > >::reverse_iterator rit = mstack.rbegin();
-	MutantStack<int, std::list<int > >::reverse_iterator rite = mstack.rend();
-	std::cout << "\nTest rbegin and rend" << std::endl;
-	std::cout << "reverse iterate mstack" << std::endl;
-	while (rit != rite)
-	{
-		std::cout << *rit << std::endl;
-		++rit;
-	}
+	// MutantStack<int, std::list<int > >::reverse_iterator rit = mstack.rbegin();
+	// MutantStack<int, std::list<int > >::reverse_iterator rite = mstack.rend();
+	// std::cout << "\nTest rbegin and rend" << std::endl;
+	// std::cout << "reverse iterate mstack" << std::endl;
+	// while (rit != rite)
+	// {
+	// 	std::cout << *rit << std::endl;
+	// 	++rit;
+	// }
 
-	std::cout << "constant reverse iterate mstack" << std::endl;
-	MutantStack<int, std::list<int > >::const_reverse_iterator const_rit = mstack.rbegin();
-	MutantStack<int, std::list<int > >::const_reverse_iterator const_rite = mstack.rend();
-	while (const_rit != const_rite)
-	{
-		std::cout << *const_rit << std::endl;
-		++const_rit;
-	}
+	// std::cout << "constant reverse iterate mstack" << std::endl;
+	// MutantStack<int, std::list<int > >::const_reverse_iterator const_rit = mstack.rbegin();
+	// MutantStack<int, std::list<int > >::const_reverse_iterator const_rite = mstack.rend();
+	// while (const_rit != const_rite)
+	// {
+	// 	std::cout << *const_rit << std::endl;
+	// 	++const_rit;
+	// }
 
-	lst.pop_back();
-	std::list<int>::reverse_iterator rit_lst = lst.rbegin();
-	std::list<int>::reverse_iterator rite_lst = lst.rend();
-	std::cout << "reverse iterate lst" << std::endl;
-	while (rit_lst != rite_lst)
-	{
-		std::cout << *rit_lst << std::endl;
-		++rit_lst;
-	}
+	// lst.pop_back();
+	// std::list<int>::reverse_iterator rit_lst = lst.rbegin();
+	// std::list<int>::reverse_iterator rite_lst = lst.rend();
+	// std::cout << "reverse iterate lst" << std::endl;
+	// while (rit_lst != rite_lst)
+	// {
+	// 	std::cout << *rit_lst << std::endl;
+	// 	++rit_lst;
+	// }
 	return (0);
 }
